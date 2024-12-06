@@ -1,0 +1,50 @@
+<div class="content">
+    <!-- Main Controller -->
+
+    <!-- Search and Sorting -->
+    <input type="text" ng-model="searchNames" placeholder="Type here to search">
+    <button>Search</button>
+    <br>
+    <button ng-click="order = 'name'">Order by name</button>
+    <button ng-click="order = 'year'">Order by year</button>
+
+    <!-- List of People -->
+    <ul>
+        <li ng-repeat="human in names | orderBy: order | filter: searchNames" ng-show="human.present">
+            <!--if '!' inserted to ng-show it will reverse what it currently showing. ng-hide will hide what is present or true-->
+            <img ng-src="{{human.thumb}}" class="thumbPfp" ng-show="human.thumb">
+            <h1 class="{{human.name}}">{{human.name}}</h1>
+            <span>{{human.year}}</span>
+            <div class="remove" ng-click="removePerson(human)">remove</div>
+        </li>
+    </ul>
+
+    <!-- Add New Person Form -->
+    <form ng-submit="addPerson()">
+        <input type="text" placeholder="Name" ng-model="newPerson.name">
+        <input type="number" placeholder="Age" ng-model="newPerson.age">
+        <input type="text" placeholder="Year" ng-model="newPerson.year">
+        <input type="text" placeholder="Section" ng-model="newPerson.section">
+        <button type="submit">Add New Person</button>
+    </form>
+
+
+    <br>
+
+    <!-- Placeholder Binding Example -->
+    <div>
+        <input type="text" ng-model="bindName" placeholder="Type your name here">
+        <p>Hello, {{bindName}}!</p>
+    </div>
+
+    <br>
+
+    <!-- Predefined Agents -->
+    <div ng-init="Agents = ['Reyna', 'Jett', 'Raze', 'Phoenix', 'Yoru', 'Iso']">
+        <p class="{{Agents[0]}}">{{Agents[0]}}</p>
+    </div>
+    <br>
+    <div>
+
+    </div>
+</div>

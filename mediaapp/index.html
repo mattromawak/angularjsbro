@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="videoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="angularjs/angular.min.js"></script>
+    <script src="module.js"></script>
+</head>
+
+<body ng-controller="VideoController">
+    <div class="video-container">
+        <h2>Video Player</h2>
+        <input type="file" accept="video/*" file-input>
+        <video id="videoPlayer" controls ng-if="videoSrc" ng-src="{{videoSrc}}">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+
+</html>

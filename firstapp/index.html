@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="taskManager">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TaskManager</title>
+    <script src="/angularjs/angular.min.js"></script>
+    <script src="/scripts/module.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller = "TaskController">
+        <h3>USING NG CONTROLLER FROM MODULE.JS</h3>
+        <ul>
+            <li ng-repeat="task in tasks">{{task}}</li>
+        </ul>
+        <p ng-class="tasks[0]">this is blue</p>
+        <p>{{message}}</p>
+    </div>
+    <br>
+    <div>
+        <h3>2 WAY DATA BINDING USING NG MODEL</h3>
+        <!-- 2 way data binding -->
+        <input type="text" ng-model="champ" placeholder="enter waht you want">
+        <p>what you type was {{champ}}</p>
+    </div>
+    <br>
+    <div ng-controller = "ListNameController">
+        <h3>FILTERING</h3>
+        <input type="text" ng-model = "search">
+        <ul>
+            <li ng-repeat = "human in humans | orderBy: 'name' | filter: search"> <!-- to descend use -name -->
+                {{human.name}} - {{human.rate | currency: '₱' }} per hour 
+            </li>  
+        </ul>
+    </div>
+</body>
+
+</html>

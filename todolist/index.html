@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/source-sans-pro" rel="stylesheet">
+    <script src="module.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-app="todoApp" ng-controller="TodoController" ng-class="{'dark-mode': isDarkMode, 'light-mode': !isDarkMode}">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center p-3 bg-light" id="header">
+            <div class="d-flex align-items-center">
+                <img src="./assets/note.png" alt="Logo" class="me-2" style="width: 50px; height: 50px;">
+                <h1 class="h4">To-Do List App</h1>
+            </div>
+            <button class="btn btn-secondary" ng-click="toggleDarkMode()">
+                <i class="fas" ng-class="{'fa-sun': !isDarkMode, 'fa-moon': isDarkMode}"></i>
+            </button>
+        </div>
+
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar" id="sidebar">
+                <div class="sidebar-sticky mt-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-sticky-note me-2"></i> Notes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bell me-2"></i> Reminders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-archive me-2"></i> Archive
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-trash me-2"></i> Trash
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+                <div class="container mt-5">
+                    <div class="mb-3">
+                        <input type="text" ng-model="newTodo" class="form-control" placeholder="Add a new task"
+                            ng-click="toggleTitleInput()" />
+                        <div ng-if="showTitleInput">
+                            <input type="text" ng-model="newTodoTitle" class="form-control mt-2"
+                                placeholder="Add a title" />
+                        </div>
+                        <button class="btn btn-primary mt-2" ng-click="addTodo()">Add</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" ng-repeat="todo in todos">
+                            <div class="todo-item">
+                                <div class="todo-content">
+                                    <h5 ng-if="!todo.editing" class="todo-title" ng-bind="todo.title"></h5>
+                                    <span ng-if="!todo.editing" class="todo-text" ng-bind="todo.text"></span>
+                                    <input ng-if="todo.editing" type="text" ng-model="todo.title" class="form-control"
+                                        placeholder="Edit title" />
+                                    <input ng-if="todo.editing" type="text" ng-model="todo.text"
+                                        class="form-control mt-2" placeholder="Edit task" />
+                                    <span class="timestamp" ng-if="!todo.editing">Added on: {{ todo.timestamp |
+                                        date:'medium' }}</span>
+                                </div>
+                                <div class="icon-container">
+                                    <button ng-if="!todo.editing" class="btn btn-warning btn-sm"
+                                        ng-click="editTodo(todo)">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button ng-if="todo.editing" class="btn btn-success btn-sm"
+                                        ng-click="saveEdit(todo)">
+                                        <i class="fas fa-save"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm" ng-click="removeTodo($index)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+</body>
+
+</html>

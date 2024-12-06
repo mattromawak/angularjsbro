@@ -1,0 +1,38 @@
+div{
+    border: 1px solid black;
+}
+
+.Reyna{
+    color: purple;
+}
+
+.Matt{
+color: blue;
+}
+
+.Chantal{
+color: pink;
+}
+
+.remove{
+    border: 1px solid black;
+    padding: 1px;
+    background-color: red;
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: smaller;
+}
+
+.remove:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+.thumbPfp{
+    margin: -12px 10px 0 0;
+    float: left;
+    width: 50px;
+}
+
+

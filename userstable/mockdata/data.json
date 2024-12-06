@@ -1,0 +1,98 @@
+[
+    {
+        "name": "John Doe",
+        "position": "Developer",
+        "office": "New York",
+        "age": 30,
+        "startDate": "2019-01-15",
+        "salary": 120000
+    },
+    {
+        "name": "Jane Smith",
+        "position": "Designer",
+        "office": "London",
+        "age": 28,
+        "startDate": "2020-02-25",
+        "salary": 110000
+    },
+    {
+        "name": "Michael Brown",
+        "position": "Manager",
+        "office": "Tokyo",
+        "age": 45,
+        "startDate": "2018-03-10",
+        "salary": 150000
+    },
+    {
+        "name": "Alice Johnson",
+        "position": "Project Manager",
+        "office": "New York",
+        "age": 34,
+        "startDate": "2018-09-01",
+        "salary": 135000
+    },
+    {
+        "name": "Kevin Hall",
+        "position": "Technical Writer",
+        "office": "Phoenix",
+        "age": 27,
+        "startDate": "2020-12-05",
+        "salary": 78000
+    },
+    {
+        "name": "Laura Harris",
+        "position": "Frontend Developer",
+        "office": "New York",
+        "age": 25,
+        "startDate": "2021-09-10",
+        "salary": 110000
+    },
+    {
+        "name": "Mike Adams",
+        "position": "Backend Developer",
+        "office": "Atlanta",
+        "age": 30,
+        "startDate": "2019-10-01",
+        "salary": 122000
+    },
+    {
+        "name": "Nina Scott",
+        "position": "Scrum Master",
+        "office": "Houston",
+        "age": 36,
+        "startDate": "2016-06-17",
+        "salary": 135000
+    },
+    {
+        "name": "Oliver Lewis",
+        "position": "Product Manager",
+        "office": "San Diego",
+        "age": 37,
+        "startDate": "2015-03-09",
+        "salary": 150000
+    },
+    {
+        "name": "Paula Edwards",
+        "position": "Systems Analyst",
+        "office": "San Francisco",
+        "age": 29,
+        "startDate": "2019-08-20",
+        "salary": 118000
+    },
+    {
+        "name": "Quinn Roberts",
+        "position": "Customer Support",
+        "office": "Las Vegas",
+        "age": 24,
+        "startDate": "2022-05-13",
+        "salary": 60000
+    },
+    {
+        "name": "Ryan Mitchell",
+        "position": "IT Consultant",
+        "office": "Philadelphia",
+        "age": 45,
+        "startDate": "2012-01-09",
+        "salary": 155000
+    }
+]

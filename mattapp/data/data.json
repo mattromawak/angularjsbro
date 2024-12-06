@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Matt",
+        "age": 21,
+        "year": "4th Year",
+        "section": "AI42",
+        "present": true,
+        "thumb": "./assets/Matt.jpg"
+    },
+    {
+        "name": "Chantal",
+        "age": 19,
+        "year": "2nd Year",
+        "section": "AI21",
+        "present": true,
+        "thumb": "./assets/Chantal.jpg"
+    },
+    {
+        "name": "Angel",
+        "age": 25,
+        "year": "Graduate",
+        "section": "none",
+        "present": true,
+        "thumb": "./assets/Angel.jpg"
+    },
+    {
+        "name": "Kyla",
+        "age": 20,
+        "year": "3rd Year",
+        "section": "AI31",
+        "present": true,
+        "thumb": "./assets/Kyla.jpg"
+    }
+]

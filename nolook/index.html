@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoList">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To-do-lsit</title>
+    <script src="/nolook/angularjs/angular.min.js"></script>
+    <script src="/nolook/scripts/module.js"></script>
+</head>
+
+<body>
+    <div ng-controller="listController">
+        <p>{{message}}</p>
+    </div>
+    <br>
+    <div ng-controller="objectController">
+        <input type="text" ng-model="search">
+        <button>search</button>
+        <ul>
+            <li ng-repeat="human in names | orderBy: 'name' | filter: search">{{human.name}}'s age is {{human.age}}</li>
+        </ul>
+    </div>
+    <br>
+    <div ng-controller="newTextController">
+        <input type="text" ng-model="newText">
+        <p>The text you are typing here is {{newText}}</p>
+    </div>
+    <br>
+    <div ng-controller="objectController">
+        <input type="text" ng-model="newSearch">
+        <button>search</button>
+        <ul>
+            <p ng-repeat="person in names | filter: newSearch">{{person.age | currency}}</p>
+        </ul>
+    </div>
+    <br>
+    <div ng-controller="testController">
+        <p>{{message}}</p>
+    </div>
+    <br>
+    <div>
+        <input ng-model="dataBinder">
+        <p>This is the text you typed: {{dataBinder}}</p>
+    </div>
+    <br>
+    <div ng-controller = "bagongController">
+        <input type="text" ng-model = "bagoSearch">
+        <button>search</button>
+        <ul>
+            <li  ng-repeat = "player in players | filter: bagoSearch">{{player.name}} | {{player.role}}</li>
+        </ul>
+    </div>
+    <br>
+    <div ng-init = "fruits = ['orange', 'apple', 'grapes']">
+        <p class="{{fruits[0]}}">{{fruits[0]}}</p>
+        <p class="{{fruits[1]}}">{{fruits[1]}}</p>
+        <p class="{{fruits[2]}}">{{fruits[2]}}</p>
+    </div>
+
+</body>
+
+</html>
